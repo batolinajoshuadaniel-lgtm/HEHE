@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Happy 3rd Monthsary ❤️
+</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;500;600&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+
+--pink:#ff6b9d;
+--darkPink:#c2185b;
+--bg:#fff5f8;
+
+--shadow:
+0 10px 25px rgba(0,0,0,.15);
+
+}
+
+*{
+
+margin:0;
+padding:0;
+
+box-sizing:border-box;
+
+}
+
+html,
+body{
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+font-family:
+'Poppins',
+sans-serif;
+
+background:
+var(--bg);
+
+}
+
+/* =========================
+PAGE SYSTEM
+========================= */
+
+.page{
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:none;
+
+overflow:hidden;
+
+}
+
+.page.active{
+
+display:block;
+
+animation:
+slideIn .8s ease;
+
+}
+
+@keyframes slideIn{
+
+from{
+
+opacity:0;
+transform:
+translateX(40px);
+
+}
+
+to{
+
+opacity:1;
+transform:
+translateX(0);
+
+}
+
+}
+
+.page-bg{
+
+position:absolute;
+
+inset:0;
+
+background-size:cover;
+background-position:center;
+
+z-index:0;
+
+}
+
+.page-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+rgba(255,255,255,.35);
+
+z-index:1;
+
+}
+
+.page-content{
+
+position:relative;
+
+z-index:2;
+
+height:100%;
+
+overflow-y:auto;
+
+padding:20px;
+
+}
+
+/* =========================
+TITLES
+========================= */
+
+.page-title{
+
+font-family:
+'Caveat',
+cursive;
+
+font-size:3.5rem;
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:
+var(--darkPink);
+
+}
+
+/* =========================
+PHOTO GRID
+========================= */
+
+.scrapbook-grid{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:15px;
+
+}
+
+.photo-slot{
+
+height:220px;
+
+background:white;
+
+border-radius:18px;
+
+overflow:hidden;
+
+position:relative;
+
+cursor:pointer;
+
+box-shadow:
+var(--shadow);
+
+transition:.3s;
+
+transform:
+rotate(-2deg);
+
+}
+
+.photo-slot:nth-child(even){
+
+transform:
+rotate(2deg);
+
+}
+
+.photo-slot:hover{
+
+transform:
+scale(1.03);
+
+}
+
+.photo-slot img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+.photo-controls{
+
+position:absolute;
+
+left:8px;
+bottom:8px;
+
+display:flex;
+
+gap:5px;
+
+}
+
+.photo-controls button{
+
+border:none;
+
+padding:6px 10px;
+
+border-radius:8px;
+
+background:
+var(--pink);
+
+color:white;
+
+cursor:pointer;
+
+font-size:12px;
+
+}
+
+/* =========================
+LOVE LETTER
+========================= */
+
+.love-letter{
+
+width:100%;
+
+min-height:70vh;
+
+background:white;
+
+padding:30px;
+
+border-radius:20px;
+
+box-shadow:
+var(--shadow);
+
+font-size:18px;
+
+line-height:2;
+
+color:#333;
+
+white-space:pre-wrap;
+
+outline:none;
+
+}
+
+/* =========================
+ACTION BUTTONS
+========================= */
+
+.action-bar{
+
+position:fixed;
+
+right:20px;
+bottom:20px;
+
+display:flex;
+
+gap:10px;
+
+z-index:9999;
+
+}
+
+.action-btn{
+
+width:55px;
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:
+var(--pink);
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+box-shadow:
+var(--shadow);
+
+}
+
+/* =========================
+MUSIC BUTTON
+========================= */
+
+.music-btn{
+
+position:fixed;
+
+top:20px;
+left:85px;
+
+width:55px;
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:
+var(--pink);
+
+color:white;
+
+font-size:20px;
+
+cursor:pointer;
+
+box-shadow:
+var(--shadow);
+
+z-index:9999;
+
+}
+
+/* =========================
+NAVIGATION
+========================= */
+
+.nav-btn{
+
+position:fixed;
+
+top:20px;
+
+width:55px;
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:
+var(--pink);
+
+color:white;
+
+font-size:22px;
+
+cursor:pointer;
+
+box-shadow:
+var(--shadow);
+
+z-index:9999;
+
+}
+
+.prev-btn{
+
+left:15px;
+
+}
+
+.next-btn{
+
+right:15px;
+
+}
+
+/* =========================
+EDITOR
+========================= */
+
+.editor-toggle{
+
+position:fixed;
+
+left:15px;
+bottom:20px;
+
+width:55px;
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:
+var(--pink);
+
+color:white;
+
+font-size:24px;
+
+cursor:pointer;
+
+z-index:9999;
+
+}
+
+.editor-panel{
+
+position:fixed;
+
+left:15px;
+bottom:85px;
+
+width:240px;
+
+background:white;
+
+padding:15px;
+
+border-radius:15px;
+
+box-shadow:
+var(--shadow);
+
+max-height:75vh;
+
+overflow:auto;
+
+z-index:9999;
+
+transition:.3s;
+
+}
+
+.editor-panel.hidden{
+
+transform:
+translateY(130%);
+
+}
+
+/* =========================
+TIMELINE PAGE
+========================= */
+
+.timeline-container{
+
+height:100%;
+
+display:flex;
+
+justify-content:center;
+align-items:center;
+
+flex-direction:column;
+
+background:
+linear-gradient(
+135deg,
+#ffd9e8,
+#fff8fb
+);
+
+}
+
+.timeline-title{
+
+font-family:
+'Caveat',
+cursive;
+
+font-size:4rem;
+
+color:
+var(--darkPink);
+
+margin-bottom:30px;
+
+text-align:center;
+
+}
+
+.timeline{
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
+
+font-size:1.2rem;
+
+text-align:center;
+
+}
+
+.start-btn{
+
+margin-top:30px;
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:15px;
+
+background:
+var(--pink);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+}
+
+/* =========================
+HEARTS
+========================= */
+
+.heart{
+
+position:absolute;
+
+pointer-events:none;
+
+opacity:.7;
+
+animation:
+floatHeart 10s linear;
+
+}
+
+@keyframes floatHeart{
+
+from{
+
+transform:
+translateY(100vh);
+
+}
+
+to{
+
+transform:
+translateY(-150px);
+
+}
+
+}
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:768px){
+
+.scrapbook-grid{
+
+grid-template-columns:
+repeat(2,1fr);
+
+}
+
+.page-title{
+
+font-size:2.7rem;
+
+}
+
+.timeline-title{
+
+font-size:3rem;
+
+}
+
+}
+
+@media(max-width:480px){
+
+.scrapbook-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.photo-slot{
+
+height:240px;
+
+transform:none !important;
+
+}
+
+.page-title{
+
+font-size:2.2rem;
+
+}
+
+.timeline-title{
+
+font-size:2.5rem;
+
+}
+
+.editor-panel{
+
+width:200px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MUSIC -->
+
+<audio
+id="bgMusic"
+loop>
+
+<source
+src="music.mp3"
+type="audio/mpeg">
+
+</audio>
+
+<button
+class="music-btn"
+id="musicBtn">
+
+🎵
+
+</button>
+
+<!-- ACTION BUTTONS -->
+
+<div
+class="action-bar"
+id="actionBar">
+
+<button
+class="action-btn"
+id="saveBtn">
+💾
+</button>
+
+<button
+class="action-btn"
+id="lockBtn">
+🔒
+</button>
+
+<button
+class="action-btn"
+id="exportBtn">
+📤
+</button>
+
+<button
+class="action-btn"
+id="importBtn">
+📥
+</button>
+
+</div>
+
+<input
+type="file"
+id="importFile"
+accept=".json"
+hidden>
+
+<button
+class="nav-btn prev-btn"
+id="prevBtn">
+❮
+</button>
+
+<button
+class="nav-btn next-btn"
+id="nextBtn">
+❯
+</button>
+
+<button
+class="editor-toggle"
+id="editorToggle">
+⚙️
+</button>
+
+<div
+class="editor-panel hidden"
+id="editorPanel">
+
+<h3>
+Scrapbook Editor
+</h3>
+
+<label>
+
+<input
+type="checkbox"
+id="editMode"
+checked>
+
+Edit Mode
+
+</label>
+
+<button id="uploadBgBtn">
+📷 Upload Background
+</button>
+
+<button id="removeBgBtn">
+🗑 Remove Background
+</button>
+
+<label>
+Background Transparency
+</label>
+
+<input
+type="range"
+id="opacitySlider"
+min="0"
+max="100"
+value="100">
+
+<label>
+Background Blur
+</label>
+
+<input
+type="range"
+id="blurSlider"
+min="0"
+max="20"
+value="0">
+
+</div>
+
+<input
+type="file"
+id="bgInput"
+accept="image/*"
+hidden>
+
+<input
+type="file"
+id="photoInput"
+accept="image/*"
+hidden>
+
+<!-- PAGE 0 -->
+
+<div
+class="page active"
+id="timelinePage">
+
+<div
+class="timeline-container">
+
+<h1 class="timeline-title">
+Our Journey So Far ❤️
+</h1>
+
+<div class="timeline">
+
+<div>Day We Met ❤️</div>
+<div>First Conversation 💬</div>
+<div>First Date 🌸</div>
+<div>1st Monthsary 💕</div>
+<div>2nd Monthsary 💖</div>
+<div>3rd Monthsary ❤️</div>
+
+</div>
+
+<button
+class="start-btn"
+id="startBookBtn">
+
+Begin Our Scrapbook ❤️
+
+</button>
+
+</div>
+
+</div>
+<!-- PAGE 1 -->
+
+<div class="page" id="page1">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<h1 class="page-title">
+Happy 3rd Monthsary ❤️
+</h1>
+
+<div style="
+max-width:900px;
+margin:auto;
+background:rgba(255,255,255,.95);
+padding:35px;
+border-radius:20px;
+box-shadow:var(--shadow);
+text-align:center;
+line-height:2;
+font-size:18px;
+">
+
+Every picture, every laugh, every late-night conversation,
+and every moment we've shared became a memory worth keeping.
+
+This scrapbook is our little time capsule,
+filled with the moments that made these
+three months unforgettable.
+
+Thank you for being my favorite person,
+my comfort, and my happiness.
+
+❤️
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="page" id="page2">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<h1 class="page-title">
+Favorite Memories 📸
+</h1>
+
+<div class="scrapbook-grid">
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="page" id="page3">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<h1 class="page-title">
+Our Adventures ✨
+</h1>
+
+<div class="scrapbook-grid">
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="page" id="page4">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<h1 class="page-title">
+💌 A Letter For You
+</h1>
+
+<div
+contenteditable="true"
+class="love-letter"
+id="letterPage">
+
+Hi! Babii it’s been 3 whole months since you said “Yes”. And those 3 months were the happiest. You made something to me that even years will never fulfill.
+
+I know we are now starting to face the real deals of being in a relationship, But I want you to always remember. No matter what the circumstances are, I will always choose you, it will always be you no matter what. Papakasalan pa kita eh HAHAHAHAHA.
+
+I really hope na all of the things I am doing right now is making you happy, I’ll do my best to provide you the love you always needed and the love you always deserve.
+
+Kaya mahal/Babii, please bear with me as I achieve my dreams and goals in life, because you will always be a part of it.
+
+I can’t imagine now a future without you, and I don’t wanna be in that future where you and I are not together.
+
+“I Love You”, isn’t it really a great phrase, where it starts with “I” and ends with “You”, and then theres “Love” between us.
+
+Happy Monthsary! Babii, I love you! 😘
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="page" id="page5">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<h1 class="page-title">
+Photo Wall ❤️
+</h1>
+
+<div class="scrapbook-grid">
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 6 -->
+
+<div class="page" id="page6">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<h1 class="page-title">
+❤️ Reasons I Love You
+</h1>
+
+<div
+contenteditable="true"
+class="love-letter"
+id="reasonsPage">
+
+Reasons!? They often say it in terms of love, people tend to make a bucket of lists of reasons why they love a person. But when I think about you, I realize love doesn’t come from a list.
+
+You are beautiful, smart, kind, loving. But those are the things I admire about you, they’re not the reason I loved you.
+
+I love you because you are you.
+
+If I had to find reasons, it would make my love sound conditional, as if it depends on certain qualities that could change over time.
+
+But my love for you isn’t a calculation or a checklist.
+
+It’s in the way I think about you when you’re not around, the way I want to share my days with you, the comfort I feel in your presence, and the future I imagine with you.
+
+It’s something deeper than reasons and stranger than explanations.
+
+So if you ask me why I love you, my answer is simple:
+
+I don’t love you for a reason.
+
+I love you because my heart chooses you, and if I had a thousand reasons, they would still never fully explain what I feel for you!
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 7 -->
+
+<div class="page" id="page7">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<h1 class="page-title">
+Special Moments 🌸
+</h1>
+
+<div class="scrapbook-grid">
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+<div class="photo-slot"></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 8 -->
+
+<div class="page" id="page8">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<h1 class="page-title">
+✨ Our Future Together
+</h1>
+
+<div
+contenteditable="true"
+class="love-letter"
+id="futurePlans">
+
+I really do hope to be your last and forever. As for the future, I wanted us to experience new things. Go to places, do something new to both of us, eat whatever we like especially strawberries HEHE 🍓
+
+Buy the things we want, for me Hirono it is HAHAHAH.
+
+And syempre, to always bear with each other, to choose “US” everyday.
+
+Whatever the future holds, let’s choose one another mahal ha, because I will always choose you!
+
+You are in my future, you are in my dreams, and goals. Because you are my future! You will always be!
+
+I love you! babiii 😘😚
+
+Happy 3rd Monthsary!
+
+Let us conquer future together!
+
+To more days, months, years with you!
+
+I love you so much ❤️
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 9 -->
+
+<div class="page" id="page9">
+
+<div class="page-bg"></div>
+<div class="page-overlay"></div>
+
+<div class="page-content">
+
+<div style="
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+">
+
+<h1 style="
+font-family:'Caveat',cursive;
+font-size:5rem;
+color:#c2185b;
+margin-bottom:20px;
+">
+
+Happy 3rd Monthsary ❤️
+
+</h1>
+
+<div style="
+max-width:800px;
+background:rgba(255,255,255,.95);
+padding:35px;
+border-radius:20px;
+box-shadow:var(--shadow);
+line-height:2;
+font-size:18px;
+">
+
+Thank you for every memory,
+every smile,
+every laugh,
+and every moment we shared.
+
+This scrapbook is only a small reminder
+of how much you mean to me.
+
+Here's to more adventures,
+more memories,
+and a future together.
+
+❤️ Forever Us ❤️
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+/* =====================================
+   GLOBAL VARIABLES
+===================================== */
+
+const pages =
+document.querySelectorAll(".page");
+
+let currentPage = 0;
+
+let selectedPhoto = null;
+
+let scrapbookLocked = false;
+
+let musicPlaying = false;
+
+const pageSettings = {};
+
+pages.forEach((page,index)=>{
+
+pageSettings[index] = {
+
+background:null,
+opacity:1,
+blur:0
+
+};
+
+});
+
+/* =====================================
+   MUSIC SYSTEM
+===================================== */
+
+const bgMusic =
+document.getElementById(
+"bgMusic"
+);
+
+const musicBtn =
+document.getElementById(
+"musicBtn"
+);
+
+/*
+CHANGE THIS VALUE
+TO THE CHORUS SECOND
+OF YOUR MUSIC.MP3
+
+Example:
+47 = 0:47
+55 = 0:55
+62 = 1:02
+*/
+
+const CHORUS_START = 47;
+
+document
+.getElementById(
+"startBookBtn"
+)
+.addEventListener(
+"click",
+()=>{
+
+bgMusic.currentTime =
+CHORUS_START;
+
+bgMusic.play();
+
+musicPlaying = true;
+
+showPage(1);
+
+}
+);
+
+musicBtn.addEventListener(
+"click",
+()=>{
+
+if(musicPlaying){
+
+bgMusic.pause();
+
+musicPlaying = false;
+
+musicBtn.innerHTML =
+"🔇";
+
+}
+else{
+
+bgMusic.play();
+
+musicPlaying = true;
+
+musicBtn.innerHTML =
+"🎵";
+
+}
+
+}
+);
+
+/* =====================================
+   PAGE SYSTEM
+===================================== */
+
+function showPage(index){
+
+pages.forEach(page=>{
+
+page.classList.remove(
+"active"
+);
+
+});
+
+pages[index]
+.classList.add(
+"active"
+);
+
+currentPage = index;
+
+loadBackground();
+
+updateEditor();
+
+updateNavButtons();
+
+}
+
+function nextPage(){
+
+if(
+currentPage <
+pages.length - 1
+){
+
+showPage(
+currentPage + 1
+);
+
+}
+
+}
+
+function prevPage(){
+
+if(
+currentPage > 0
+){
+
+showPage(
+currentPage - 1
+);
+
+}
+
+}
+
+document
+.getElementById(
+"nextBtn"
+)
+.addEventListener(
+"click",
+nextPage
+);
+
+document
+.getElementById(
+"prevBtn"
+)
+.addEventListener(
+"click",
+prevPage
+);
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+function updateNavButtons(){
+
+document
+.getElementById(
+"prevBtn"
+)
+.style.display =
+
+currentPage === 0
+? "none"
+: "block";
+
+document
+.getElementById(
+"nextBtn"
+)
+.style.display =
+
+currentPage ===
+pages.length - 1
+? "none"
+: "block";
+
+}
+
+/* =====================================
+   MOBILE SWIPE
+===================================== */
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener(
+"touchstart",
+e=>{
+
+touchStartX =
+e.changedTouches[0]
+.clientX;
+
+}
+);
+
+document.addEventListener(
+"touchend",
+e=>{
+
+touchEndX =
+e.changedTouches[0]
+.clientX;
+
+handleSwipe();
+
+}
+);
+
+function handleSwipe(){
+
+if(
+touchStartX -
+touchEndX > 70
+){
+
+nextPage();
+
+}
+
+if(
+touchEndX -
+touchStartX > 70
+){
+
+prevPage();
+
+}
+
+}
+
+/* =====================================
+   EDITOR TOGGLE
+===================================== */
+
+const editorPanel =
+document.getElementById(
+"editorPanel"
+);
+
+const editorToggle =
+document.getElementById(
+"editorToggle"
+);
+
+editorToggle
+.addEventListener(
+"click",
+()=>{
+
+editorPanel.classList.toggle(
+"hidden"
+);
+
+}
+);
+
+/* =====================================
+   IMAGE COMPRESSION
+===================================== */
+
+function compressImage(
+file,
+callback
+){
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(e){
+
+const img =
+new Image();
+
+img.src =
+e.target.result;
+
+img.onload =
+function(){
+
+const canvas =
+document.createElement(
+"canvas"
+);
+
+const ctx =
+canvas.getContext(
+"2d"
+);
+
+let width =
+img.width;
+
+let height =
+img.height;
+
+const maxWidth =
+1400;
+
+if(
+width > maxWidth
+){
+
+height =
+height *
+(maxWidth / width);
+
+width =
+maxWidth;
+
+}
+
+canvas.width =
+width;
+
+canvas.height =
+height;
+
+ctx.drawImage(
+img,
+0,
+0,
+width,
+height
+);
+
+callback(
+
+canvas.toDataURL(
+"image/jpeg",
+0.82
+)
+
+);
+
+};
+
+};
+
+reader.readAsDataURL(
+file
+);
+
+}
+
+/* =====================================
+   PHOTO CLICK
+===================================== */
+
+document
+.querySelectorAll(
+".photo-slot"
+)
+.forEach(slot=>{
+
+slot.addEventListener(
+"click",
+()=>{
+
+if(scrapbookLocked)
+return;
+
+if(
+!document
+.getElementById(
+"editMode"
+)
+.checked
+)
+return;
+
+selectedPhoto =
+slot;
+
+document
+.getElementById(
+"photoInput"
+)
+.click();
+
+});
+
+});
+
+/* =====================================
+   PHOTO UPLOAD
+===================================== */
+
+document
+.getElementById(
+"photoInput"
+)
+.addEventListener(
+"change",
+function(e){
+
+const file =
+e.target.files[0];
+
+if(
+!file ||
+!selectedPhoto
+)
+return;
+
+compressImage(
+file,
+compressed=>{
+
+selectedPhoto.innerHTML =
+`
+<img src="${compressed}">
+
+<div class="photo-controls">
+
+<button onclick="replacePhoto(this)">
+Replace
+</button>
+
+<button onclick="removePhoto(this)">
+Delete
+</button>
+
+</div>
+`;
+
+saveAll();
+
+}
+);
+
+}
+);
+
+/* =====================================
+   REPLACE PHOTO
+===================================== */
+
+function replacePhoto(btn){
+
+if(scrapbookLocked)
+return;
+
+selectedPhoto =
+btn.closest(
+".photo-slot"
+);
+
+document
+.getElementById(
+"photoInput"
+)
+.click();
+
+}
+
+/* =====================================
+   DELETE PHOTO
+===================================== */
+
+function removePhoto(btn){
+
+if(scrapbookLocked)
+return;
+
+btn
+.closest(
+".photo-slot"
+)
+.innerHTML = "";
+
+saveAll();
+
+}
+
+/* =====================================
+   BACKGROUND SYSTEM
+===================================== */
+
+const bgInput =
+document.getElementById(
+"bgInput"
+);
+
+document
+.getElementById(
+"uploadBgBtn"
+)
+.addEventListener(
+"click",
+()=>{
+
+if(scrapbookLocked)
+return;
+
+bgInput.click();
+
+}
+);
+
+bgInput
+.addEventListener(
+"change",
+e=>{
+
+const file =
+e.target.files[0];
+
+if(!file)
+return;
+
+compressImage(
+file,
+compressed=>{
+
+pageSettings[
+currentPage
+].background =
+compressed;
+
+loadBackground();
+
+saveAll();
+
+}
+);
+
+}
+);
+
+document
+.getElementById(
+"removeBgBtn"
+)
+.addEventListener(
+"click",
+()=>{
+
+pageSettings[
+currentPage
+].background =
+null;
+
+loadBackground();
+
+saveAll();
+
+}
+);
+
+document
+.getElementById(
+"opacitySlider"
+)
+.addEventListener(
+"input",
+function(){
+
+pageSettings[
+currentPage
+].opacity =
+this.value / 100;
+
+loadBackground();
+
+saveAll();
+
+}
+);
+
+document
+.getElementById(
+"blurSlider"
+)
+.addEventListener(
+"input",
+function(){
+
+pageSettings[
+currentPage
+].blur =
+this.value;
+
+loadBackground();
+
+saveAll();
+
+}
+);
+
+function loadBackground(){
+
+const page =
+pages[currentPage];
+
+const bg =
+page.querySelector(
+".page-bg"
+);
+
+if(!bg)
+return;
+
+const settings =
+pageSettings[
+currentPage
+];
+
+if(
+settings.background
+){
+
+bg.style.backgroundImage =
+`url('${settings.background}')`;
+
+bg.style.opacity =
+settings.opacity;
+
+bg.style.filter =
+`blur(${settings.blur}px)`;
+
+}
+else{
+
+bg.style.backgroundImage =
+"none";
+
+}
+
+}
+
+function updateEditor(){
+
+const settings =
+pageSettings[
+currentPage
+];
+
+document
+.getElementById(
+"opacitySlider"
+)
+.value =
+settings.opacity * 100;
+
+document
+.getElementById(
+"blurSlider"
+)
+.value =
+settings.blur;
+
+}
+
+/* =====================================
+   SAVE SYSTEM
+===================================== */
+
+function collectProjectData(){
+
+const data = {
+
+pageSettings,
+
+letter:
+document.getElementById(
+"letterPage"
+)?.innerHTML || "",
+
+reasons:
+document.getElementById(
+"reasonsPage"
+)?.innerHTML || "",
+
+future:
+document.getElementById(
+"futurePlans"
+)?.innerHTML || "",
+
+photos:[],
+
+currentPage,
+
+scrapbookLocked
+
+};
+
+document
+.querySelectorAll(
+".photo-slot"
+)
+.forEach(slot=>{
+
+data.photos.push(
+slot.innerHTML
+);
+
+});
+
+return data;
+
+}
+
+function saveAll(){
+
+const data =
+collectProjectData();
+
+localStorage.setItem(
+"monthsaryProject",
+JSON.stringify(data)
+);
+
+}
+
+/* =====================================
+   RESTORE PROJECT
+===================================== */
+
+function restoreProject(data){
+
+if(!data)
+return;
+
+if(data.pageSettings){
+
+Object.keys(
+data.pageSettings
+).forEach(key=>{
+
+pageSettings[key] =
+data.pageSettings[key];
+
+});
+
+}
+
+const letter =
+document.getElementById(
+"letterPage"
+);
+
+const reasons =
+document.getElementById(
+"reasonsPage"
+);
+
+const future =
+document.getElementById(
+"futurePlans"
+);
+
+if(letter)
+letter.innerHTML =
+data.letter || "";
+
+if(reasons)
+reasons.innerHTML =
+data.reasons || "";
+
+if(future)
+future.innerHTML =
+data.future || "";
+
+if(data.photos){
+
+document
+.querySelectorAll(
+".photo-slot"
+)
+.forEach((slot,index)=>{
+
+slot.innerHTML =
+data.photos[index]
+|| "";
+
+});
+
+}
+
+currentPage =
+data.currentPage || 0;
+
+scrapbookLocked =
+data.scrapbookLocked || false;
+
+showPage(
+currentPage
+);
+
+if(scrapbookLocked){
+
+applyLockMode();
+
+}
+
+}
+
+/* =====================================
+   LOAD LOCAL SAVE
+===================================== */
+
+function loadLocalSave(){
+
+const saved =
+localStorage.getItem(
+"monthsaryProject"
+);
+
+if(!saved)
+return false;
+
+try{
+
+restoreProject(
+JSON.parse(saved)
+);
+
+return true;
+
+}
+catch(err){
+
+console.log(err);
+
+return false;
+
+}
+
+}
+
+/* =====================================
+   SAVE BUTTON
+===================================== */
+
+document
+.getElementById(
+"saveBtn"
+)
+.addEventListener(
+"click",
+()=>{
+
+saveAll();
+
+alert(
+"❤️ Scrapbook Saved!"
+);
+
+}
+);
+
+/* =====================================
+   AUTO SAVE LETTERS
+===================================== */
+
+[
+"letterPage",
+"reasonsPage",
+"futurePlans"
+]
+.forEach(id=>{
+
+const el =
+document.getElementById(id);
+
+if(el){
+
+el.addEventListener(
+"input",
+saveAll
+);
+
+}
+
+});
+
+/* =====================================
+   EXPORT JSON
+===================================== */
+
+document
+.getElementById(
+"exportBtn"
+)
+.addEventListener(
+"click",
+()=>{
+
+const data =
+collectProjectData();
+
+const blob =
+new Blob(
+[
+JSON.stringify(
+data,
+null,
+2
+)
+],
+{
+type:
+"application/json"
+}
+);
+
+const a =
+document.createElement(
+"a"
+);
+
+a.href =
+URL.createObjectURL(
+blob
+);
+
+a.download =
+"monthsary-project.json";
+
+a.click();
+
+}
+);
+
+/* =====================================
+   IMPORT JSON
+===================================== */
+
+document
+.getElementById(
+"importBtn"
+)
+.addEventListener(
+"click",
+()=>{
+
+document
+.getElementById(
+"importFile"
+)
+.click();
+
+}
+);
+
+document
+.getElementById(
+"importFile"
+)
+.addEventListener(
+"change",
+function(e){
+
+const file =
+e.target.files[0];
+
+if(!file)
+return;
+
+const reader =
+new FileReader();
+
+reader.onload =
+function(){
+
+try{
+
+const data =
+JSON.parse(
+reader.result
+);
+
+restoreProject(
+data
+);
+
+saveAll();
+
+alert(
+"❤️ Project Imported!"
+);
+
+}
+catch(err){
+
+alert(
+"Invalid JSON File"
+);
+
+}
+
+};
+
+reader.readAsText(
+file
+);
+
+}
+);
+
+/* =====================================
+   GITHUB AUTO LOAD
+===================================== */
+
+async function loadFromGitHub(){
+
+try{
+
+const response =
+await fetch(
+"monthsary-project.json"
+);
+
+if(
+!response.ok
+)
+return false;
+
+const data =
+await response.json();
+
+restoreProject(
+data
+);
+
+return true;
+
+}
+catch(err){
+
+return false;
+
+}
+
+}
+
+/* =====================================
+   FINALIZE MODE
+===================================== */
+
+document
+.getElementById(
+"lockBtn"
+)
+.addEventListener(
+"click",
+()=>{
+
+const confirmLock =
+confirm(
+"Finalize scrapbook?"
+);
+
+if(
+!confirmLock
+)
+return;
+
+scrapbookLocked =
+true;
+
+applyLockMode();
+
+saveAll();
+
+alert(
+"🔒 Scrapbook Finalized!"
+);
+
+}
+);
+
+function applyLockMode(){
+
+document
+.getElementById(
+"editorPanel"
+)
+.classList.add(
+"hidden"
+);
+
+document
+.getElementById(
+"editorToggle"
+)
+.style.display =
+"none";
+
+document
+.getElementById(
+"saveBtn"
+)
+.style.display =
+"none";
+
+document
+.getElementById(
+"lockBtn"
+)
+.style.display =
+"none";
+
+document
+.getElementById(
+"importBtn"
+)
+.style.display =
+"none";
+
+/* KEEP EXPORT BUTTON */
+
+document
+.getElementById(
+"exportBtn"
+)
+.style.display =
+"block";
+
+/* LOCK LETTERS */
+
+[
+"letterPage",
+"reasonsPage",
+"futurePlans"
+]
+.forEach(id=>{
+
+const el =
+document.getElementById(id);
+
+if(el){
+
+el.contentEditable =
+false;
+
+}
+
+});
+
+/* HIDE PHOTO CONTROLS */
+
+document
+.querySelectorAll(
+".photo-controls"
+)
+.forEach(control=>{
+
+control.style.display =
+"none";
+
+});
+
+/* MOVE NAVIGATION TO BOTTOM */
+
+document
+.getElementById(
+"prevBtn"
+)
+.style.top =
+"auto";
+
+document
+.getElementById(
+"nextBtn"
+)
+.style.top =
+"auto";
+
+document
+.getElementById(
+"prevBtn"
+)
+.style.bottom =
+"20px";
+
+document
+.getElementById(
+"nextBtn"
+)
+.style.bottom =
+"20px";
+
+}
+
+/* =====================================
+   FLOATING HEARTS
+===================================== */
+
+function createHeart(){
+
+const heart =
+document.createElement(
+"div"
+);
+
+heart.className =
+"heart";
+
+const hearts =
+[
+"❤️",
+"💕",
+"💖",
+"💘",
+"💗"
+];
+
+heart.innerHTML =
+hearts[
+Math.floor(
+Math.random() *
+hearts.length
+)
+];
+
+heart.style.left =
+Math.random()*100
++ "vw";
+
+heart.style.fontSize =
+(
+20 +
+Math.random()*20
+)
++ "px";
+
+heart.style.animationDuration =
+(
+8 +
+Math.random()*6
+)
++ "s";
+
+document.body
+.appendChild(
+heart
+);
+
+setTimeout(()=>{
+
+heart.remove();
+
+},15000);
+
+}
+
+setInterval(
+createHeart,
+1200
+);
+
+/* =====================================
+   INITIALIZE
+===================================== */
+
+async function initialize(){
+
+updateNavButtons();
+
+const localLoaded =
+loadLocalSave();
+
+if(!localLoaded){
+
+await loadFromGitHub();
+
+}
+
+showPage(
+currentPage || 0
+);
+
+}
+
+initialize();
+
+</script>
+
+</body>
+</html>
